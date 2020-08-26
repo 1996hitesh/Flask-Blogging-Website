@@ -1,0 +1,16 @@
+{
+    "params":{
+        "server":"True",
+        "local_uri":"mysql://root:Hitesh@123@127.0.0.1/blogwebsite",
+        "prod_uri":"mysql://root:Hitesh@123@127.0.0.1/blogwebsite",
+        "fb_url":"https://facebook.com",
+        "title":"Programmers Blog",
+        "gmail-user":"your user",
+        "gmail-password":"your password",
+        "num_post":"5",
+        "login_image":"logo.png",
+        "admin-user":"hitesh",
+        "admin-password":"password123",
+        "upload_location":"C:\\Users\\Hitesh\\Desktop\\Flask App\\uploads"
+    }
+}

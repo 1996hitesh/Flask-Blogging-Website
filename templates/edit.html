@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="site-cover site-cover-sm same-height overlay single-page"
+    style="background-image: url('{{url_for('static', filename = 'images/img_4.jpg')}}');">
+    <div class="container">
+        <div class="row same-height justify-content-center">
+            <div class="col-md-12 col-lg-10">
+                <div class="post-entry text-center">
+                    <h1 class="">Admin Dashborad</h1>
+                    <p class="lead mb-4 text-white">Welcome to Admin Panel you can add delete or modify any post here!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="site-section bg-light">
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <h1>Basic Action</h1>
+                <a href="/login"><button class="btn btn-primary py-2 px-4 text-white">Dashborad Home</button></a>
+                <a href="/logout"><button class="btn btn-primary py-2 px-4 text-white">Logout</button></a>
+                <hr>
+
+                <h1>Add/Edit Posts</h1>
+                <form action="/edit/{{sno}}" class="p-5 bg-white" method="POST" enctype="multipart/form-data">
+                    <div class=" row form-group">
+                        <div class="col-md-12 mb-3 mb-md-0">
+                            <label class="text-black" for="title">title</label>
+                            <input type="text" id="title" class="form-control" name="title" value="{{post.title}}">
+                        </div>
+                        <div class="col-md-12">
+                            <label class="text-black" for="by">Author</label>
+                            <input type="text" id="author" class="form-control" name="author" value="{{post.by}}">
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+
+                        <div class="col-md-12">
+                            <label class="text-black" for="category">Category</label>
+                            <input type="text" id="category" class="form-control" name="category"
+                                value="{{post.category}}">
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+
+                        <div class="col-md-12">
+                            <label class="text-black" for="slug">Slug</label>
+                            <input type="slug" id="slug" class="form-control" name="slug" value="{{post.slug}}">
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+
+                        <div class="col-md-12">
+                            <label class="text-black" for="file">Insert Image: </label>
+                            <input type="file" name="file2">
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <label class="text-black" for="content">Content</label>
+                            <textarea name="content" id="content" cols="30" rows="7" class="form-control"
+                                placeholder="Write your content here...">{{post.content}}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <input type="submit" value="Upload" class="btn btn-primary py-2 px-4 text-white">
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}
